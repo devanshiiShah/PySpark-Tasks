@@ -82,16 +82,3 @@ df.write.format("csv").option('header',True).mode('overwrite').save("/home/devan
 df =df.filter(col("country") == 'Russia')
 df.write.format("csv").option('header',True).mode('overwrite').save("/home/devanshi/country")
 
-#Count total employees who did registration in between 2016-02-01 to 2016-02-03.
-# df = df.filter(df.Registraion_Date.startswith("2016-02-01"))
-# df = df.filter(df.Registraion_Date.endswith("2016-02-03"))
-# df.select(df.Registraion_Date, df.Registration_Date.between("2016-02-01", "2016-02-03"))
-# df = spark.sql("select Registraion_Date, Registraion_Date from Registraion_Date "  \
-#                 " where Registraion_Date between 2016-02-01 and 2016-02-03")
-# spark.sql("SELECT Registraion_Date,COUNT(*) FROM Registraion_Date where(col("Registraion_Date").between("2016-02-01","2016-02-03")))
-# df = spark.sql("select count(distinct(*)) from Registraion_Date")         
-df = df.select("Registraion_Date","id").where(col("Registraion_Date").between("2016-02-01","2016-02-03 "))
-
-df.write.format("csv").option('header',True).mode('overwrite').save("/home/devanshi/emp")
-
-# select * from Registraion_Date where registration is between 2016-02-01 to 2016-02-03
