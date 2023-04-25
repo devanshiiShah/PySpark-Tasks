@@ -1,3 +1,20 @@
+# - Read Parquet File 
+# - Process data: (Note: If birthdate is empty fill-out manually)
+#     1) Add Column Full Name: first_name, Last Name ( first_name, Last Name should be removed)
+#     2) Remove Comment column
+#     3) Add New Column "Registraion Date" from registration_dttm (Registration date should be in date Format)
+#     4) Add Age column from birth-date
+# - Store as csv in local
+# - Add Partition based on csv 
+#    Partition Should be:
+#        1) Male/Female
+#        2) Year (From Birthdate)
+#     3) Month (From Birthdate)
+#     4) Day (From Birthdate)
+# - Business Date
+#     1) Find out those users who has age>60
+#     2) Find out those users who has salary>22000
+    
 #final task
 #Import
 from pyspark.sql import SparkSession
